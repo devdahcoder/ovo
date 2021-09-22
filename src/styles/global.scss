@@ -1,0 +1,68 @@
+.svg-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svg-button {
+    font-size: 14px;
+    align-items: center;
+    background: 0 0;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.svg-container {
+    cursor: pointer;
+    border: 0 solid #000;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.more-dash-icon-wrapper {
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    vertical-align: top;
+    transition: 0.5s ease;
+
+
+    svg {
+        transition: 0.5s ease;
+        height: 15px;
+        width: 15px;
+        padding: 10px;
+        box-sizing: content-box;
+        cursor: pointer;
+        vertical-align: top;
+
+    }
+
+    &::after {
+        content: "";
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        z-index: 0;
+        display: block;
+        border-radius: 50px;
+    }
+
+    &:hover {
+        &::after {
+            background-color: hsla(0, 11%, 36%, 0.2);
+            transition: 0.5s ease;
+        }
+    }
+}

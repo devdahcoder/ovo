@@ -1,0 +1,366 @@
+@import "../../styles/mixins";
+
+.side--bar--container {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 6px 0;
+    background: hsl(0, 0%, 100%);
+    box-shadow: 7px 0px 106px hsla(0, 0%, 0%, 0.1);
+    border-radius: 2px;
+    transition: all 0.5s ease;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+
+    @include response(medium) {
+        width: 60px;
+        overflow: hidden;
+
+
+        &:hover {
+            width: 280px;
+
+            .side--bar--header--container {
+                transition: display 9s linear;
+
+                // .side--bar--header--menu-bar {
+                //     position: absolute;
+                //     right: 15px;
+                //     top: 15px;
+                // }
+
+                .side--bar--header--logo {
+                    margin-top: 3em;
+                }
+
+
+                .side--bar--icon--btn--container {
+                    top: 20px;
+                    right: 30px;
+
+                    .side--bar--header--menu-bar {
+                        // position: absolute;
+                        // right: 0px;
+                        // top: 0px;
+
+                    }
+                }
+
+
+                .side--bar--header--details--container {
+                    display: flex;
+                    transition: display 9s linear;
+                }
+            }
+
+
+            .side--bar--nav {
+                .side--bar--ul {
+                    padding-right: 1.5em;
+                    .side--bar--li {
+                        .active {
+                            background: hsl(260, 100%, 96%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .side--bar--header--container {
+        position: relative;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        position: relative;
+
+
+        .side--bar--logo--container {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+
+            @include response(medium) {
+                justify-content: center;
+            }
+
+            .side--bar--header--logo {
+                display: block;
+
+                @include response(medium) {
+                    width: 100%;
+                }
+
+                svg {
+                    width: 100%;
+                }
+
+            }
+        }
+
+
+        .side--bar--icon--btn--container {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+
+            @include response(medium) {
+                top: 100px;
+                right: 10px;
+                transform: translate(-50%, 0);
+            }
+
+
+            .side--bar--header--menu-cancel {
+                margin-left: 2em;
+
+                @include response(medium) {
+                    display: none;
+                }
+            }
+        }
+
+
+        .side--bar--header--details--container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            transition: display 9s linear;
+            text-align: center;
+
+            @include response(medium) {
+                display: none;
+            }
+
+            .side--bar--header--name--tag {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                // flex-wrap: wrap;
+                font-weight: bold;
+                font-size: 1.4rem;
+                color: hsl(326, 93%, 37%);
+                text-align: center;
+
+
+                
+            }
+
+            .side--bar--header--name--date {
+                font-size: 1.4rem;
+                color: hsl(326, 93%, 37%);
+                text-align: center;
+                font-weight: bold;
+                padding: 0.5em 0;
+            }
+
+            .side--bar--header--group-name {
+                font-size: 0.9rem;
+                color: hsl(0, 0%, 51%);
+            }
+        }
+
+        
+    }
+
+
+    .side--bar--nav {
+        // overflow-y: scroll;
+        // height: 100vh;
+        // padding-bottom: 15em;
+
+        @include response(medium) {
+            overflow: hidden;
+        }
+
+        .side--bar--ul {
+            list-style: none;
+            position: relative;
+            margin-top: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            padding-right: 5em;
+
+
+            @include response(medium) {
+                padding-right: 0em;
+            }
+            
+
+
+            .side--bar--li {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin: 0.5em 0;
+                position: relative;
+                align-items: center;
+
+                .side--bar--li--link {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    padding: 0.7em 1.5em 0.7em 1em;
+                    position: relative;
+
+                    .side--bar--link--icon--container {
+                        width: 2em;
+                        height: 2em;
+                        min-width: 2em;
+                        min-height: 2em;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 100vh;
+                        position: relative;
+
+                        .header--profile--picture--container {
+                            white-space: nowrap;
+                            background-color: rgb(32, 25, 25);
+                            border-radius: 50%;
+                            box-sizing: border-box;
+                            display: block;
+                            flex: 0 0 auto;
+                            overflow: hidden;
+                            position: relative;
+                            cursor: pointer;
+                            width: 30px;
+                            height: 30px;
+                            border: 3.2px solid hsl(203, 100%, 75%);
+                            color: hsl(0, 0%, 100%);
+                            text-align: center;
+
+                            .profile--name {
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 0.6rem;
+                            }
+
+                            .profile--image {
+                                height: 100%;
+                                width: 100%;
+
+                            }
+                        }
+
+                        .notification--link--tag--container {
+                            position: absolute;
+                            left: -4px;
+                            top: 0px;
+
+                            .notification--link--tag {
+                                background: hsl(36, 100%, 50%);
+                                border: 1px solid hsl(0, 0%, 100%);
+                                align-items: center;
+                                border-radius: 100px;
+                                color: hsl(0, 0%, 100%);
+                                font-size: 11px;
+                                font-weight: semibold;
+                                height: 18px;
+                                justify-content: center;
+                                min-width: 18px;
+                                position: relative;
+
+                                .notification--link--count {
+                                    position: absolute;
+                                    left: 50%;
+                                    top: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                            }
+                        }
+                    }
+
+                    .side--bar--link--text {
+                        display: flex;
+                        align-items: center;
+                        margin-left: 1.5em;
+                        font-size: 1rem;
+                        color: hsl(0, 0%, 51%);
+                        text-align: center;
+                        font-weight: 450;
+                        white-space: nowrap;
+
+
+                    }
+
+                }
+
+                .active {
+                    transition: all 0.5s ease;
+                    background: hsl(260, 100%, 96%);
+                    border-radius: 0px 50px 50px 0px;
+
+                    @include response(medium) {
+                        background: none;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -11px;
+                        width: 1em;
+                        height: 100%;
+                        background-color: hsl(326, 93%, 37%);
+                        border-radius: 100vh;
+                    }
+
+                    .side--bar--link--icon--container {
+                        svg {
+                            path {
+                                fill: hsl(326, 93%, 37%);
+                            }
+                        }
+                    }
+
+                    .side--bar--link--text {
+                        color: hsl(326, 93%, 37%);
+                    }
+                }
+            }
+
+            .header--li--component {
+                @include response(medium) {
+                    display: none;
+                }
+            }
+
+            .profile--side--bar {
+                &::before {
+                    content: "";
+                    width: 100%;
+                    background-color: hsl(0, 0%, 73%);
+                    height: 0.1em;
+                    position: absolute;
+                    top: -9px;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
+
+

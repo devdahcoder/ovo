@@ -1,0 +1,19 @@
+@mixin response($size) {
+    @if $size==small {
+        @media screen and (min-width: 600px) {
+            @content
+        }
+    }
+
+    @if $size==medium {
+        @media screen and (min-width: 900px) {
+            @content
+        }
+    }
+
+    @if $size==large {
+        @media screen and (min-width: 1200px) {
+            @content
+        }
+    }
+}
