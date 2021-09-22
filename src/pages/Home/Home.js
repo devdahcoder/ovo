@@ -4,7 +4,6 @@ import "./home.scss"
 
 // imported components
 import TagName from "../../components/TagName/TagName"
-import Header from "../../components/Header/Header"
 import Image from "./Image 16 1.png"
 
 const Home = () => {

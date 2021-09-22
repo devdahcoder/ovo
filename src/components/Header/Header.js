@@ -7,7 +7,7 @@ const Header = () => {
         <header className="header">
             <div className="header--nav--container">
 
-                <div className="svg-button-container header--prev--url--container ">
+                <div className="svg-button-container header--prev--url--container svg--icon--wrapper">
                     <button className="svg-button">
                         <div className="svg-container more-dash-icon-wrapper ">
                             <svg width="12" height="19" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +55,7 @@ const Header = () => {
                 </div>
 
 
-                <div className="header--hamburger--menu svg-button-container ">
+                <div className="header--hamburger--menu svg-button-container svg--icon--wrapper">
                     <button className="svg-button">
                         <div className="svg-container more-dash-icon-wrapper">
                             <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">

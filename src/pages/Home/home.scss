@@ -1,11 +1,14 @@
+@import "../../styles/mixins";
+
 .main--section {
     align-items: stretch;
-    // flex-grow: 1;
-    // // margin: 0 auto;
     position: relative;
     width: 100%;
     display: flex;
-    // flex-flow: row nowrap;
+
+    @include response(medium) {
+        flex-grow: 1;
+    }
 
     .main--container {
         width: 90%;
@@ -13,20 +16,22 @@
         padding: 90px 0;
         align-items: stretch;
         display: flex;
-        flex-shrink: 0;
         position: relative;
         flex-direction: column;
 
         .home--event--display--container {
-            // padding: 1em;
             margin-bottom: 3em;
-            // background-color: hsl(0, 0%, 100%);
-            // box-shadow: 0px 4px 40px hsla(0, 0%, 0%, 0.05);
             border-radius: 20px;
             display: flex;
-            // flex-direction: row;
             flex-direction: column-reverse;
             width: 100%;
+
+            @include response(medium) {
+                flex-direction: row;
+                padding: 1em;
+                background-color: hsl(0, 0%, 100%);
+                box-shadow: 0px 4px 40px hsla(0, 0%, 0%, 0.05);
+            }
 
 
             .home--event--date--container {
@@ -43,8 +48,11 @@
                 background-repeat: no-repeat;
                 background-size: 100px;
                 background-position: right bottom;
-                // width: 20em;
                 width: 100%;
+
+                @include response(medium) {
+                    width: 20em;
+                }
 
                 .home--event--date--name--container {
                     display: flex;
@@ -103,12 +111,21 @@
                 flex-direction: column;
                 flex-grow: 3;
                 align-items: stretch;
-                // margin-left: 2em;
                 margin-bottom: 1.5em;
                 padding: 1em;
                 border-radius: 24.2254px;
                 background-color: hsl(0, 0%, 100%);
                 box-shadow: 0px 4px 40px hsla(0, 0%, 0%, 0.05);
+
+
+                @include response(medium) {
+                    background-color: transparent;
+                    box-shadow: none;
+                    margin-left: 2em;
+                    margin-bottom: 0em;
+                    padding: 0em;
+                }
+
 
                 .home--event--banner--container {
                     background-color: hsl(0, 0%, 94%);
@@ -118,6 +135,10 @@
                     height: 300px;
                     border-radius: 15px;
 
+                    @include response(medium) {
+                        height: 200px;
+                    }
+
                     .event--banner {
                         display: block;
                         overflow: hidden;
@@ -125,6 +146,10 @@
                         position: relative;
                         height: 300px;
                         border-radius: 15px;
+
+                        @include response(medium) {
+                            height: 200px;
+                        }
 
 
                         img {
@@ -139,6 +164,10 @@
                             -ms-user-select: none;
                             user-select: none;
                             border-radius: 15px;
+
+                            @include response(medium) {
+                                height: 200px;
+                            }
                             
                         }
 
@@ -206,15 +235,22 @@
                     }
                 }
 
+
                 .home--main--event--detail--container {
                     display: flex;
                     flex-direction: column;
-                    // align-items: center;
-                    // justify-content: space-between;
-                    // margin-top: auto;
+
+                    @include response(medium) {
+                        align-items: center;
+                        margin-top: auto;
+                        flex-direction: row;
+                    }
+
 
                     .group--detail {
                         padding: 1em 0;
+                        margin-right: 7em;
+                        
                         .group--detail--header {
                             font-size: 0.9rem;
                             line-height: 24px;
@@ -238,12 +274,11 @@
 
                     .event--group--name--container {
                         width: 100%;
+
+                        @include response(medium) {
+                            width: unset;
+                        }
                     }
-
-
-                    // .event--group--name--container {
-
-                    // }
 
                     .event--group--member--container {
                         .event--group--member--display{
@@ -308,10 +343,6 @@
 
                             }
                         }
-                    }
-
-                    .event--group--type--container {
-
                     }
                 }
             }
